@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 2a96705a4826ab34a9d6887041e366f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2587337440035294447
+    second: sled-diagonal_0
+  - first:
+      213: 8044588556995555465
+    second: sled-diagonal_1
+  - first:
+      213: -7628974462952763148
+    second: sled-diagonal_2
+  - first:
+      213: -889901150608406145
+    second: sled-diagonal_3
+  - first:
+      213: 665047451511336354
+    second: sled-diagonal_4
+  - first:
+      213: -104158583238756542
+    second: sled-diagonal_5
+  - first:
+      213: 4344273136014228371
+    second: sled-diagonal_6
+  - first:
+      213: 239434253363661744
+    second: sled-diagonal_7
+  - first:
+      213: 4906812754547658074
+    second: sled-diagonal_8
+  - first:
+      213: 1651947869809937866
+    second: sled-diagonal_9
+  - first:
+      213: 484372279348658753
+    second: sled-diagonal_10
+  - first:
+      213: 991727031639958808
+    second: sled-diagonal_11
+  - first:
+      213: -432740853191359753
+    second: sled-diagonal_12
+  - first:
+      213: -5976197791078737968
+    second: sled-diagonal_13
+  - first:
+      213: 4582843193038990825
+    second: sled-diagonal_14
+  - first:
+      213: -7553589108277738906
+    second: sled-diagonal_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sled-diagonal_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 64
+        width: 42
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637ef53371597e248b77be531625448c
+      internalID: 2587337440035294447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 64
+        width: 42
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e32c03a9f9be724fbf76a564c81801f
+      internalID: 8044588556995555465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 64
+        width: 39
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa252f3ce3656984ca39e7ebfdc1993d
+      internalID: -7628974462952763148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_3
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 64
+        width: 39
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f4b7fe2fdec464982cee4d0910d635
+      internalID: -889901150608406145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 64
+        width: 42
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23536f8ff7d98b64ea2f901326ce7fae
+      internalID: 665047451511336354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 64
+        width: 42
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c971807828293a14aa71c7c2eef10f37
+      internalID: -104158583238756542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_6
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 64
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2929b6ed1f14d13439311068a8b5390a
+      internalID: 4344273136014228371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_7
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 64
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5926561aa1b66cb4d9b3e798e26d4cdd
+      internalID: 239434253363661744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 42
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56225014f82fd3344b62304d55dc1fe7
+      internalID: 4906812754547658074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 42
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60906a57be5cf34ba07a019ccb0233a
+      internalID: 1651947869809937866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_10
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 0
+        width: 39
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e42d2f9f9e2c940b40efaaa137352b
+      internalID: 484372279348658753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 39
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5912c49149ab424cb2f472ca05dc934
+      internalID: 991727031639958808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_12
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 41
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef479256c52fe243ae167f3fd27f397
+      internalID: -432740853191359753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_13
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 41
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b7bcfd390c41a46a80207f379c2bd3
+      internalID: -5976197791078737968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_14
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 40
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef1ed02a3619904fa0aaa3644e02606
+      internalID: 4582843193038990825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sled-diagonal_15
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 40
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e3c99e4b8ec284a9164f7ea07b222f
+      internalID: -7553589108277738906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

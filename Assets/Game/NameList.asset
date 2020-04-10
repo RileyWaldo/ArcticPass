@@ -1,0 +1,406 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0c80b12cc4e2547b043ecbefb9f913, type: 3}
+  m_Name: NameList
+  m_EditorClassIdentifier: 
+  firstFemaleNames:
+  - Alexandria
+  - Allie
+  - Annie
+  - Amelia
+  - Ariella
+  - Anna
+  - Amaranthe
+  - Alexa
+  - Baroness
+  - Belle
+  - Betsy
+  - Betty
+  - Becky
+  - Beatrice
+  - Candence
+  - Candice
+  - Carrie
+  - Carlene
+  - Carly
+  - Dana
+  - Dani
+  - Debora
+  - Denise
+  - Derina
+  - Darling
+  - Ella
+  - Emmy-Lou
+  - Emily
+  - Frances
+  - Fanny
+  - Gertrude
+  - Gertu
+  - Harmony
+  - Heddy
+  - Heila
+  - Heather
+  - Hunter
+  - Haylee
+  - Imogen
+  - Irwin
+  - Iri
+  - Jennifer
+  - Jenna
+  - Jaymee
+  - Jackie
+  - Jay
+  - Joanna
+  - Jayna
+  - Jada
+  - Kayla
+  - Kari
+  - Karolina
+  - Kelly
+  - Kenna
+  - Katie
+  - Kara
+  - Karen
+  - Laurence
+  - Laura
+  - Laylee
+  - Maria
+  - Mary
+  - Mariah
+  - Mackenzie
+  - Maggie
+  - Mae
+  - Melody
+  - Mona
+  - Newo
+  - Nina
+  - Niki
+  - Olivia
+  - Oriah
+  - Patty
+  - Paige
+  - Paiste
+  - Para
+  - Quila
+  - Ramona
+  - Rebecca
+  - Raylee
+  - ReAnna
+  - Samantha
+  - Sadie
+  - Sophie
+  - Sally
+  - Selina
+  - Siobhan
+  - Sheilagh
+  - Shayna
+  - Sheighanne
+  - Starra
+  - Taryn
+  - Taylor
+  - Tayla
+  - Taylor
+  - Telly
+  - Teri
+  - Tannis
+  - Tara
+  - Uori
+  - Victoria
+  - Valerie
+  - Waiva
+  - Xora
+  - Yara
+  - Yolanda
+  - Zabel
+  - Zara
+  firstMaleNames:
+  - Alex
+  - Arin
+  - Aedin
+  - Abben
+  - Adam
+  - Archie
+  - Benjamin
+  - Barry
+  - Baxter
+  - Benson
+  - Billy
+  - Bodom
+  - B-Man
+  - Bruce
+  - Cameron
+  - Conaar
+  - Crator
+  - Constantine
+  - David
+  - Dakota
+  - Darryl
+  - Dalton
+  - Daniel
+  - Dwight
+  - Erick
+  - Endjin
+  - Ethan
+  - Fabien
+  - Farlee
+  - Garry
+  - Gerald
+  - Gordon
+  - Galleon
+  - Gabriel
+  - Gregory
+  - Gooby
+  - Henry
+  - Harry
+  - Hugo
+  - Harold
+  - Isak
+  - Ignacio
+  - Jerry
+  - Jacob
+  - JayJay
+  - Jakota
+  - Jack
+  - Jaymes
+  - Jonny
+  - Jarold
+  - Jesse
+  - Jesus
+  - Kenneth
+  - Kodi
+  - Kaydon
+  - Kofi
+  - Kord
+  - Lawrence
+  - Larry
+  - Lucas
+  - Lee
+  - Micheal
+  - Mimir
+  - Mathew
+  - Marcel
+  - Moses
+  - Moe
+  - Mort
+  - Morel
+  - Noel
+  - Nicholas
+  - Neal
+  - Ori
+  - Odie
+  - Odin
+  - Parry
+  - Peter
+  - Perd
+  - Pele
+  - Porter
+  - Quinn
+  - Redd
+  - Rylleigh
+  - Ryen
+  - Rory
+  - Raiden
+  - Samuel
+  - Samas
+  - Sid
+  - Sora
+  - Scott
+  - Serry
+  - Sebastien
+  - Smith
+  - Terry
+  - Taerd
+  - Toren
+  - Twill
+  - Uriah
+  - Vic
+  - Varg
+  - Watson
+  - Wally
+  - Weldon
+  - Wallace
+  - Xasthur
+  - Yeller
+  - Yellow
+  - Yaro
+  - Zorro
+  - Zordon
+  - Zelly
+  lastNames:
+  - Anderson
+  - Akerdon
+  - Aukerman
+  - Taylor
+  - Brown
+  - Madden
+  - Gureen
+  - Micheals
+  - Galloway
+  - Walado
+  - Mathews
+  - Mayer
+  - FirstTry!
+  - Orel
+  - Kovich
+  - Williams
+  - Harvy
+  - Redfur
+  - Watson
+  - Daniels
+  - Adomson
+  - Burley
+  - BeeGoode
+  - Baxter
+  - Mustard
+  - Smith
+  - Walters
+  - Vickerknes
+  - Aran
+  - Andrews
+  - Abrams
+  - Legion
+  - Samuels
+  - Odinson
+  - Stevens
+  - Scotts
+  - Jacobson
+  - Lifeson
+  - Samson
+  - Heap
+  - Potter
+  - Lucas
+  - Kenson
+  - Gurard
+  - Stevenson
+  - Redley
+  - Trublue
+  - Squanch
+  - Diddles
+  - Flowers
+  - Pilgrim
+  villageFirstNames:
+  - Dusty
+  - Tiny
+  - Washed
+  - Dirty
+  - Village
+  - Post
+  - Camp
+  - Peak
+  - Group
+  - Port
+  - Trail
+  - Frozen
+  - Grand
+  - Little
+  - Hello
+  - Unlucky
+  - Unworthy
+  - Cliff
+  - Happy
+  - Big
+  - Town
+  - Friendly
+  - Peaceful
+  - Arctic
+  villageLastNames:
+  - Town
+  - Road
+  - Camp
+  - Village
+  - Stop
+  - One
+  - 3
+  - 6
+  - 9
+  - 12
+  - Red
+  - Blue
+  - Yellow
+  - Green
+  - Katan
+  - Truth
+  - Mountain
+  - Pass
+  - Royal
+  - Sarim
+  - Speare
+  - Canadian
+  - Border
+  - Crossing
+  - Cabins
+  - Mecca
+  - Rest
+  - Community
+  - Relaxation
+  - Paradise
+  - Sauna
+  - Sanctuary
+  - Kharid
+  - Vharok
+  - Meeting
+  - Conference
+  - Ending
+  - Edge
+  - Dale
+  - Gathering
+  caveNames:
+  - Cave of the Damned
+  - Cavern of Lost Souls
+  - Cave of Callapse
+  - Underoak Tomb
+  - Tomb of the Headless
+  - Ancient Grave
+  - Ancient Solitude
+  - Cave of Sorrow
+  - Cave of Solitude
+  - Cavern of the Spire
+  - Dusty Caves
+  - Cave of Fire
+  - Cave of Ice
+  - Crystal Depths
+  - Cave of Crystal
+  - Cavern of Tombs
+  - Cavern of Crystals
+  - Cave of the Ancients
+  - Cave of Lunatic
+  - Forgotten Decent
+  - Tomb of the Ancients
+  - Hidden Weakness
+  - Dead Memory Cave
+  - Crystal Sorrow Tomb
+  - Weathered Tomb
+  - Weathered Decent
+  - Underoak Cave
+  - Underoak Cavern
+  - Dusty Graves
+  - Old Weakness
+  - Old Decent
+  - Old Graves
+  - Old Sorrow
+  - Underoak Sorrow
+  - Underoak Solitude
+  - Tomb of the Hidden
+  - Ancient Tomb
+  - Cave of the Hidden
+  - Cavern of Sorrow
+  - Ancient Weathered Tomb
+  - Ancient Cave
+  - Dusty Weakness
+  - Dusty Crystal
+  - Dusty Tombs
+  - Catacomb of the Ancients
+  - Underoak Catacomb
+  - Old Catacomb
+  - Dusty Catacomb
+  - Crystal Catacomb
+  - Catacomb Caves

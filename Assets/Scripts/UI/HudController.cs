@@ -8,9 +8,9 @@ namespace ArcticPass.UI
     public class HudController : MonoBehaviour
     {
         [Header("Referances")]
-        [SerializeField] Image healthGUI;
+        [SerializeField] Image healthGUI = null;
         [Header("Sprites")]
-        [SerializeField] Sprite[] healthSprite;
+        [SerializeField] Sprite[] healthSprite = null;
 
         GameObject player;
 

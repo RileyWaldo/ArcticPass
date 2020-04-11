@@ -7,7 +7,7 @@ namespace ArcticPass.Control
 {
     public class SceneLoader : MonoBehaviour
     {
-        [SerializeField] Image screenOverlay;
+        [SerializeField] Image screenOverlay = null;
         [SerializeField] float transitionTime = 2f;
 
         int transitionIndex = 0;

@@ -10,17 +10,15 @@ namespace ArcticPass.UI
     {
         //Referances
         [Header("UI")]
-        [SerializeField] Image mouseItemIcon;
-        [SerializeField] Text mouseItemText;
+        [SerializeField] Image mouseItemIcon = null;
+        [SerializeField] Text mouseItemText = null;
 
         [Header("Menu Referance")]
-        [SerializeField] GameObject playerMenu;
-        [SerializeField] GameObject sledMenu;
+        [SerializeField] GameObject playerMenu = null;
+        [SerializeField] GameObject sledMenu = null;
 
         [Header("Inventorys")]
-        [SerializeField] InventoryID playerInventoryID;
-        [SerializeField] InventoryID sledInventoryID;
-        [SerializeField] Text descriptionText;
+        [SerializeField] Text descriptionText = null;
 
         //States
 
@@ -31,8 +29,8 @@ namespace ArcticPass.UI
 
         private void Start()
         {
-            playerInventory = Inventory.GetInventory(playerInventoryID);
-            sledInventory = Inventory.GetInventory(sledInventoryID);
+            playerInventory = Inventory.GetInventory(InventoryID.player);
+            sledInventory = Inventory.GetInventory(InventoryID.sled);
             HideAllMenus();
         }
 

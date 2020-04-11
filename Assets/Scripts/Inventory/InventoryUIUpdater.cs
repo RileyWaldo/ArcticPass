@@ -5,8 +5,8 @@ namespace ArcticPass.UI
 {
     public class InventoryUIUpdater : MonoBehaviour
     {
-        [SerializeField] InventoryID inventoryID;
-        [SerializeField] DragAndDrop itemSlotPrefab;
+        [SerializeField] InventoryID inventoryID = InventoryID.player;
+        [SerializeField] DragAndDrop itemSlotPrefab = null;
 
         Inventory inventory;
 

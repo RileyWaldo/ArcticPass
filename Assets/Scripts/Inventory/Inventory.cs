@@ -6,8 +6,8 @@ namespace ArcticPass.InventorySystem
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] InventoryID inventoryID;
-        [SerializeField] ItemSlot[] itemSlots;
+        [SerializeField] InventoryID inventoryID = InventoryID.player;
+        [SerializeField] ItemSlot[] itemSlots = { };
 
         static Dictionary<InventoryID, Inventory> inventories = new Dictionary<InventoryID, Inventory>();
 

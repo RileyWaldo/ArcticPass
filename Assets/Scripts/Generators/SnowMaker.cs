@@ -12,15 +12,31 @@ namespace ArcticPass.Generator
 
         private void Start()
         {
-            viewPos = new Vector3(Camera.main.pixelWidth/2, Camera.main.scaledPixelHeight, 0);
             partSystem = GetComponentInChildren<ParticleSystem>();
+
+            ScaleShape();
+            SetEmitter();
+            SetPosition();
+        }
+
+        private void ScaleShape()
+        {
             ParticleSystem.ShapeModule psShape = partSystem.shape;
             psShape.scale = new Vector3(Camera.main.orthographicSize * Camera.main.aspect * 2, 2f);
         }
 
-        private void LateUpdate()
+        private void SetEmitter()
         {
-            transform.position = Camera.main.ScreenToWorldPoint(viewPos);
+            ParticleSystem.EmissionModule psEmission = partSystem.emission;
+            psEmission.rateOverTime = numberOfParticles;
+        }
+
+        private void SetPosition()
+        {
+            Camera cam = Camera.main;
+            viewPos = new Vector3(cam.transform.position.x, cam.transform.position.y + cam.orthographicSize, 0);
+            transform.parent = Camera.main.transform;
+            transform.localPosition = viewPos;
         }
     }
 }

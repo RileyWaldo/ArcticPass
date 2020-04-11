@@ -49,9 +49,24 @@ MonoBehaviour:
   masterVolume: 1
   musicVolume: 1
   sfxVolume: 1
-  menuMusic: {fileID: 8300000, guid: 36808c21fa5e63f4484fd6e9bd8dda9f, type: 3}
-  passMusic: []
-  caveMusic: []
+  waitBetweenSong: 2
+  menuMusic:
+  - {fileID: 8300000, guid: b016c6ea0eae0c0469c13538bfcac201, type: 3}
+  - {fileID: 8300000, guid: 8a585a13da13c7245bea931ee539b64c, type: 3}
+  - {fileID: 8300000, guid: f0b58e64e1650b0429914afb24b0df09, type: 3}
+  - {fileID: 8300000, guid: 14671e10ada1fd74e8b1c73d878171a1, type: 3}
+  passMusic:
+  - {fileID: 8300000, guid: 895256a6023183349880d74e749fc959, type: 3}
+  - {fileID: 8300000, guid: e936126eb2bfe5343b02d541712aabb4, type: 3}
+  - {fileID: 8300000, guid: b0ffab6d367148c4b820bb6e68a7c256, type: 3}
+  - {fileID: 8300000, guid: c14dc56bb76db5f47920301f6c2c48ac, type: 3}
+  - {fileID: 8300000, guid: 5077ecb37c20132428e62eed80208125, type: 3}
+  - {fileID: 8300000, guid: eac21e8ce61e96c4ab664bda458afc2c, type: 3}
+  - {fileID: 8300000, guid: 519b983a2193cf646b13b6567bc037f2, type: 3}
+  caveMusic:
+  - {fileID: 8300000, guid: a7db007f6d698ee48afb94a8b85aabbc, type: 3}
+  - {fileID: 8300000, guid: e83ffb950d729cc4d82a5a4b19df1e4a, type: 3}
+  - {fileID: 8300000, guid: 355a8bfaabbf36944b603f204cf20f0b, type: 3}
 --- !u!81 &7030963958042233246
 AudioListener:
   m_ObjectHideFlags: 0

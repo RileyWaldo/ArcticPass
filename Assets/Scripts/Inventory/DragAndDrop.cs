@@ -6,7 +6,7 @@ namespace ArcticPass.UI
     public class DragAndDrop : MonoBehaviour
     {
         [SerializeField] Image image = null;
-        [SerializeField] Text text;
+        [SerializeField] Text text = null;
 
         InventoryID inventoryID;
         int slotID = 0;

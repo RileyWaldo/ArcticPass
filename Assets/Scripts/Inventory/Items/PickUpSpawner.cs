@@ -4,7 +4,7 @@ namespace ArcticPass.InventorySystem
 {
     public class PickUpSpawner : MonoBehaviour
     {
-        [SerializeField] PickUp pickUpPrefab;
+        [SerializeField] PickUp pickUpPrefab = null;
 
         public static PickUpSpawner spawner;
 

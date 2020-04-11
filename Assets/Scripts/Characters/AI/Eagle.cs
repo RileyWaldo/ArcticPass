@@ -8,20 +8,20 @@ namespace ArcticPass.AI
     {
         [SerializeField] float speed = 2f;
         [SerializeField] float destroyTime = 10f;
-        //[SerializeField] AudioClip eagleClip;
+        [SerializeField] AudioClip eagleClip = null;
 
         Vector3 direction;
         float timerDestroy = 0f;
 
         private void Start()
         {
-            //AudioController.Get().PlaySound(eagleClip);
+            AudioController.Get().PlaySound(eagleClip);
 
             Vector3 playerPos = PlayerController.GetPlayer().transform.position;
             direction = playerPos - transform.position;
             direction.Normalize();
 
-            transform.rotation = Quaternion.AngleAxis(Vector3.Angle(transform.position, playerPos), Vector3.forward);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         }
 
         private void Update()

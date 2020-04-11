@@ -4,6 +4,6 @@ namespace ArcticPass.Core
 {
     public class Prop : MonoBehaviour
     {
-
+        
     }
 }

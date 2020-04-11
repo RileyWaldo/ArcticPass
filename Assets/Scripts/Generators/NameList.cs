@@ -5,12 +5,12 @@ namespace ArcticPass.Generator
     [CreateAssetMenu(fileName = "NameList", menuName = "ArcticPass/Create New Name List", order = 2)]
     public class NameList : ScriptableObject
     {
-        [SerializeField] string[] firstFemaleNames;
-        [SerializeField] string[] firstMaleNames;
-        [SerializeField] string[] lastNames;
-        [SerializeField] string[] villageFirstNames;
-        [SerializeField] string[] villageLastNames;
-        [SerializeField] string[] caveNames;
+        [SerializeField] string[] firstFemaleNames = { };
+        [SerializeField] string[] firstMaleNames = { };
+        [SerializeField] string[] lastNames = { };
+        [SerializeField] string[] villageFirstNames = { };
+        [SerializeField] string[] villageLastNames = { };
+        [SerializeField] string[] caveNames = { };
 
         public string GetFirstFemaleName()
         {

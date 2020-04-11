@@ -15,16 +15,16 @@ namespace ArcticPass.Audio
         [SerializeField] float waitBetweenSong = 2f;
 
         [Header("Audio Source:")]
-        [SerializeField] AudioClip[] menuMusic;
-        [SerializeField] AudioClip[] passMusic;
-        [SerializeField] AudioClip[] caveMusic;
+        [SerializeField] AudioClip[] menuMusic = { };
+        [SerializeField] AudioClip[] passMusic = { };
+        [SerializeField] AudioClip[] caveMusic = { };
 
         AudioSource backgroundSource;
         AudioSource sfxSource;
 
         float songWaitTime = 0f;
 
-        static AudioController id;
+        static AudioController id = null;
 
         public static AudioController Get()
         {
@@ -63,7 +63,10 @@ namespace ArcticPass.Audio
 
         private void ShuffleMusic()
         {
+            if (backgroundSource == null) { return; }
+
             AudioClip clip = null;
+
             switch (GameManager.Get().GetGameState())
             {
                 case GameState.MainMenu:
@@ -74,26 +77,27 @@ namespace ArcticPass.Audio
                     clip = passMusic[Random.Range(0, passMusic.Length - 1)];
                     break;
             }
-            if (clip)
-            {
-                PlayBackground(clip);
-            }
+
+            PlayBackground(clip);
         }
 
         public void PlayBackground(AudioClip clip)
         {
+            if (clip == null) { return; }
             backgroundSource.clip = clip;
             backgroundSource.Play();
         }
 
         public void PlaySound(AudioClip clip)
         {
+            if (clip == null) { return; }
             backgroundSource.clip = clip;
             backgroundSource.PlayOneShot(clip);
         }
 
         public void PlaySoundPos(AudioClip clip, Vector3 pos)
         {
+            if (clip == null) { return; }
             Vector3 playFrom = pos - PlayerController.GetPlayer().transform.position;
             AudioSource.PlayClipAtPoint(clip, playFrom);
         }

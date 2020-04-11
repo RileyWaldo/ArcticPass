@@ -4,7 +4,7 @@ namespace ArcticPass.Core
 {
     public class PersistantObjects : MonoBehaviour
     {
-        [SerializeField] GameObject persistantObjectPrefab;
+        [SerializeField] GameObject persistantObjectPrefab = null;
 
         static bool hasSpawned = false;
 

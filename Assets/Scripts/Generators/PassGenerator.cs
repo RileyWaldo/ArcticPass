@@ -7,8 +7,8 @@ namespace ArcticPass.Generator
 {
     public class PassGenerator : MonoBehaviour
     {
-        [SerializeField] Tilemap tileMap;
-        [SerializeField] Tile tile;
+        [SerializeField] Tilemap tileMap = null;
+        [SerializeField] Tile tile = null;
         [SerializeField] float passLength = 100;
         [SerializeField] float passWidth = 1000;
         [SerializeField] float passHeight = 1000;

@@ -6,7 +6,7 @@ namespace ArcticPass.Generator
 {
     public class PropSpawner : MonoBehaviour
     {
-        [SerializeField] List<PropDetails> props;
+        [SerializeField] List<PropDetails> props = new List<PropDetails>();
 
         PassGenerator passGenerator;
         float radius;
@@ -44,7 +44,7 @@ namespace ArcticPass.Generator
         [System.Serializable]
         private class PropDetails
         {
-            [SerializeField] Prop propPrefab;
+            [SerializeField] Prop propPrefab = null;
             [SerializeField] int density = 10;
             [Range(0f, 1f)][SerializeField] float spawnChance = 1f;
 

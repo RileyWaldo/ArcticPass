@@ -5,7 +5,7 @@ namespace ArcticPass.InventorySystem
 {
     public class ItemFinder : MonoBehaviour
     {
-        [SerializeField] Item[] items;
+        [SerializeField] Item[] items = { };
 
         static Dictionary<ItemID, Item> itemLookUp = new Dictionary<ItemID, Item>();
 

@@ -5,15 +5,15 @@ namespace ArcticPass.InventorySystem
     [CreateAssetMenu(fileName = "Item", menuName = "ArcticPass/Create New Item", order = 0)]
     public class Item : ScriptableObject
     {
-        [SerializeField] ItemID itemID;
-        [SerializeField] Sprite sprite;
-        [SerializeField] ItemType itemType;
-        [SerializeField] string itemName;
-        [TextArea] [SerializeField] string itemDescription;
-        [SerializeField] bool isStackable;
-        [SerializeField] int value;
-        [SerializeField] int weight;
-        [SerializeField] int damage;
+        [SerializeField] ItemID itemID = ItemID.rock;
+        [SerializeField] Sprite sprite = null;
+        [SerializeField] ItemType itemType = ItemType.Resource;
+        [SerializeField] string itemName = "";
+        [TextArea] [SerializeField] string itemDescription = "";
+        [SerializeField] bool isStackable = false;
+        [SerializeField] int value = 0;
+        [SerializeField] int weight = 0;
+        [SerializeField] int damage = 0;
 
         public ItemID GetItemID()
         {

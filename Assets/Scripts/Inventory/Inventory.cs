@@ -60,7 +60,7 @@ namespace ArcticPass.InventorySystem
                     break;
                 }
             }
-            ThrowUpdateEvent();
+
             return canAdd;
         }
 
@@ -82,20 +82,18 @@ namespace ArcticPass.InventorySystem
                 itemSlots[slot].SetItem(itemToAdd, value);
                 canAdd = true;
             }
-            ThrowUpdateEvent();
+
             return canAdd;
         }
 
         public void SetItemInSlot(Item item, int amount, int slot)
         {
             itemSlots[slot].SetItem(item, amount);
-            ThrowUpdateEvent();
         }
 
         public void RemoveItemFromSlot(int slot)
         {
             itemSlots[slot].RemoveItem();
-            ThrowUpdateEvent();
         }
 
         public Item GetItem(int slot)
@@ -116,22 +114,6 @@ namespace ArcticPass.InventorySystem
         public void AddAmountInSlot(int amount, int slot)
         {
             itemSlots[slot].AddAmount(amount);
-            ThrowUpdateEvent();
-        }
-
-        public void ForceUpdate()
-        {
-            ThrowUpdateEvent();
-        }
-
-        //custom event
-        public delegate void UpdatedInventoryEventHandler();
-
-        public event UpdatedInventoryEventHandler UpdatedInventoryEvent;
-
-        private void ThrowUpdateEvent()
-        {
-            UpdatedInventoryEvent?.Invoke();
         }
 
     }

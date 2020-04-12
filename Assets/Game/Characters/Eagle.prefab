@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1991b2a064660499245e45202b6584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  destroyTime: 10
+  speed: 3
+  destroyTime: 20
+  maxLoopTime: 3
   eagleClip: {fileID: 8300000, guid: 46fed6d7db4ac2b4387691d8e0bb9aed, type: 3}
 --- !u!1 &5545388725657333241
 GameObject:

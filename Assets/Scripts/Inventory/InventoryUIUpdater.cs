@@ -13,18 +13,12 @@ namespace ArcticPass.UI
         private void Start()
         {
             inventory = Inventory.GetInventory(inventoryID);
-            if (inventory != null)
-            {
-                inventory.UpdatedInventoryEvent += OnUpdateSlots;
-            }
-
             PopulateUISlots();
-            OnUpdateSlots();
         }
 
         private void Update()
         {
-            OnUpdateSlots();
+            UpdateSlots();
         }
 
         private void PopulateUISlots()
@@ -36,7 +30,7 @@ namespace ArcticPass.UI
             }
         }
 
-        private void OnUpdateSlots()
+        private void UpdateSlots()
         {
             int i = 0;
             foreach (Transform itemSlot in transform)

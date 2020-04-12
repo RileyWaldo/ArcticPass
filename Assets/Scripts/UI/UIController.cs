@@ -59,7 +59,6 @@ namespace ArcticPass.UI
             if (Input.GetKeyDown(KeyCode.O))
             {
                 sledMenu.SetActive(!sledMenu.activeSelf);
-                sledInventory.ForceUpdate();
             }
 
             //mouse input
@@ -141,7 +140,6 @@ namespace ArcticPass.UI
         private void ToggleInventory()
         {
             playerMenu.SetActive(!playerMenu.activeSelf);
-            playerInventory.ForceUpdate();
         }
 
         private void ProcessItemSlot(DragAndDrop itemSlot)

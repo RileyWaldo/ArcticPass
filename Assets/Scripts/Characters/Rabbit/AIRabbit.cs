@@ -27,7 +27,6 @@ namespace ArcticPass.AI
 
         Health health;
         Animator animator;
-        Rigidbody2D rigidBody;
         GameObject target = null;
 
         const string horizontal = "Horizontal";
@@ -40,6 +39,12 @@ namespace ArcticPass.AI
         float timerMoving = 0f;
         float timerFlee = 0f;
 
+        IRabbitState currentState;
+
+        //properties
+
+        public Rigidbody2D RigidBody { get; private set; }
+
         //Unity functions
 
         private void Start()
@@ -47,34 +52,19 @@ namespace ArcticPass.AI
             health = GetComponent<Health>();
             health.SetMaxHealth(maxHealth);
             animator = GetComponentInChildren<Animator>();
-            rigidBody = GetComponent<Rigidbody2D>();
+            RigidBody = GetComponent<Rigidbody2D>();
             target = PlayerController.GetPlayer().gameObject;
             goal = transform.position;
+
+            currentState = new RabbitStateIdle();
         }
 
         private void Update()
         {
-            ProcessState();
-            Animate();
+            currentState.OnStateUpdate(this);
         }
 
         /// private methods
-
-        private void ProcessState()
-        {
-            switch (state)
-            {
-                case AIState.Idle:
-                    Idle();
-                    break;
-                case AIState.Move:
-                    Move();
-                    break;
-                case AIState.Flee:
-                    Flee();
-                    break;
-            }
-        }
 
         private void Idle()
         {
@@ -93,11 +83,6 @@ namespace ArcticPass.AI
             {
                 state = AIState.Flee;
             }
-        }
-
-        private void Move()
-        {
-            //rigidBody.velocity = goal * stats.GetSpeed();
         }
 
         private void Flee()
@@ -120,32 +105,18 @@ namespace ArcticPass.AI
             }
         }
 
-        private void Animate()
-        {
-            animator.SetFloat(horizontal, rigidBody.velocity.normalized.x);
-            animator.SetFloat(vertical, rigidBody.velocity.normalized.y);
-        }
-
         private void MoveToGoal(float speed)
         {
             if(Vector2.Distance(transform.position, goal) <= speed * Time.deltaTime)
             {
-                rigidBody.velocity = Vector2.zero;
+                RigidBody.velocity = Vector2.zero;
             }
             else
             {
                 Vector2 moveDirection = goal - transform.position;
-                rigidBody.AddForce(moveDirection * speed);
-                rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, speed);
+                RigidBody.AddForce(moveDirection * speed);
+                RigidBody.velocity = Vector3.ClampMagnitude(RigidBody.velocity, speed);
             }
-        }
-
-        //gizmos
-        private void OnDrawGizmosSelected()
-        {
-            //Handles.color = Color.green;
-            //Handles.DrawWireDisc(transform.position, Vector3.forward, fleeRange);
-            //Handles.DrawLine(transform.position, goal);
         }
     }
 }

@@ -44,6 +44,7 @@ namespace ArcticPass.Control
         {
             GetInput();
             UpdatePosition();
+            Attack();
             Animate();
         }
 
@@ -64,8 +65,8 @@ namespace ArcticPass.Control
             animator.speed = 1f;
             animator.SetFloat(horizontal, inputLast.x);
             animator.SetFloat(verticle, inputLast.y);
-            if (rigidBody.velocity.magnitude <= 1f)
-            {
+            if (!animator.GetBool("attack") && rigidBody.velocity.magnitude <= 1f)
+            {    
                 animator.speed = 0f;
             }
         }
@@ -92,6 +93,14 @@ namespace ArcticPass.Control
             if (rigidBody.velocity.magnitude > moveSpeed * addSprint)
             {
                 rigidBody.velocity = rigidBody.velocity.normalized * moveSpeed * addSprint;
+            }
+        }
+
+        private void Attack()
+        {
+            if (Input.GetAxis("Fire2") > 0.5f)
+            {
+                animator.SetBool("attack", true);
             }
         }
 

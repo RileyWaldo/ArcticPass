@@ -1,8 +1,9 @@
-﻿using ArcticPass.AI;
-
-public interface IRabbitState
+﻿namespace ArcticPass.AI
 {
-    void OnStateEnter(AIRabbit rabbit);
-    void OnStateExit(AIRabbit rabbit);
-    void OnStateUpdate(AIRabbit rabbit);
+    public interface IRabbitState
+    {
+        void OnStateEnter(AIRabbit rabbit);
+        void OnStateExit(AIRabbit rabbit);
+        void OnStateUpdate(AIRabbit rabbit);
+    }
 }

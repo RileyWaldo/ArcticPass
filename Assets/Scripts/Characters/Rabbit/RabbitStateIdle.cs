@@ -2,61 +2,64 @@
 using ArcticPass.Control;
 using UnityEngine;
 
-public class RabbitStateIdle : MonoBehaviour, IRabbitState
+namespace ArcticPass.AI
 {
-    [SerializeField] float maxWaitTime = 2f;
-    [Range(0f, 1f)][SerializeField] float wonderChance = 0.5f;
-
-    PlayerController player;
-    IRabbitState fleeState;
-    IRabbitState wonderState;
-
-    float waitTime;
-
-    private void Start()
+    public class RabbitStateIdle : MonoBehaviour, IRabbitState
     {
-        player = PlayerController.GetPlayer();
-        fleeState = GetComponent<RabbitStateFlee>();
-        wonderState = GetComponent<RabbitStateWonder>();
-    }
+        [SerializeField] float maxWaitTime = 2f;
+        [Range(0f, 1f)] [SerializeField] float wonderChance = 0.5f;
 
-    public void OnStateEnter(AIRabbit rabbit)
-    {
-        waitTime = Random.Range(1f, maxWaitTime);
-    }
+        PlayerController player;
+        IRabbitState fleeState;
+        IRabbitState wonderState;
 
-    public void OnStateExit(AIRabbit rabbit)
-    {
-        
-    }
+        float waitTime;
 
-    public void OnStateUpdate(AIRabbit rabbit)
-    {
-        RunTransitionTimer(rabbit);
-        AvoidPlayer(rabbit);
-    }
-
-    private void RunTransitionTimer(AIRabbit rabbit)
-    {
-        waitTime -= Time.deltaTime;
-        if (waitTime <= 0f)
+        private void Start()
         {
-            if (Random.value <= wonderChance)
+            player = PlayerController.GetPlayer();
+            fleeState = GetComponent<RabbitStateFlee>();
+            wonderState = GetComponent<RabbitStateWonder>();
+        }
+
+        public void OnStateEnter(AIRabbit rabbit)
+        {
+            waitTime = Random.Range(1f, maxWaitTime);
+        }
+
+        public void OnStateExit(AIRabbit rabbit)
+        {
+
+        }
+
+        public void OnStateUpdate(AIRabbit rabbit)
+        {
+            RunTransitionTimer(rabbit);
+            AvoidPlayer(rabbit);
+        }
+
+        private void RunTransitionTimer(AIRabbit rabbit)
+        {
+            waitTime -= Time.deltaTime;
+            if (waitTime <= 0f)
             {
-                rabbit.TransitionState(wonderState);
-            }
-            else
-            {
-                waitTime = Random.Range(1f, maxWaitTime);
+                if (Random.value <= wonderChance)
+                {
+                    rabbit.TransitionState(wonderState);
+                }
+                else
+                {
+                    waitTime = Random.Range(1f, maxWaitTime);
+                }
             }
         }
-    }
 
-    private void AvoidPlayer(AIRabbit rabbit)
-    {
-        if (Vector2.Distance(transform.position, player.transform.position) <= rabbit.FleeRange)
+        private void AvoidPlayer(AIRabbit rabbit)
         {
-            rabbit.TransitionState(fleeState);
+            if (Vector2.Distance(transform.position, player.transform.position) <= rabbit.FleeRange)
+            {
+                rabbit.TransitionState(fleeState);
+            }
         }
     }
 }

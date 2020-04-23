@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using ArcticPass.Control;
 
 namespace ArcticPass.AI
@@ -8,20 +7,19 @@ namespace ArcticPass.AI
     [RequireComponent(typeof(Health))]
     public class AIRabbit : MonoBehaviour
     {
-        //Tunables
         [Header("Stats")]
         [SerializeField] float maxHealth = 20f;
-        [SerializeField] float damage = 2f;
+        [SerializeField] float fleeRange = 4f;
 
         IRabbitState currentState;
+        IRabbitState nextState;
 
-        //properties
+        bool isStateTransitioning = false;
 
         public Rigidbody2D RigidBody { get; private set; }
         public Animator Animator { get; private set; }
         public Health Health { get; private set; }
-
-        //Unity functions
+        public float FleeRange { get { return fleeRange; } }
 
         private void Start()
         {
@@ -32,16 +30,22 @@ namespace ArcticPass.AI
             InitialState(GetComponent<RabbitStateIdle>());
         }
 
-        private void InitialState(IRabbitState state)
-        {
-            currentState = state;
-            currentState.OnStateEnter(this);
-        }
-
         private void Update()
         {
-            currentState.OnStateUpdate(this);
+            HandleStateEvents();
             Animate();
+        }
+
+        private void HandleStateEvents()
+        {
+            currentState.OnStateUpdate(this);
+            if (isStateTransitioning)
+            {
+                isStateTransitioning = false;
+                currentState.OnStateExit(this);
+                currentState = nextState;
+                currentState.OnStateEnter(this);
+            }
         }
 
         private void Animate()
@@ -58,12 +62,16 @@ namespace ArcticPass.AI
             }
         }
 
-        public void TransitionState(IRabbitState state)
+        private void InitialState(IRabbitState state)
         {
-            print("State Transition: " + state);
-            currentState.OnStateExit(this);
             currentState = state;
             currentState.OnStateEnter(this);
+        }
+
+        public void TransitionState(IRabbitState state)
+        {
+            nextState = state;
+            isStateTransitioning = true;
         }
     }
 }

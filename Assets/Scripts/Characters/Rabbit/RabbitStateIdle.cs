@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RabbitStateIdle : MonoBehaviour, IRabbitState
 {
-    [SerializeField] float fleeRange = 4f;
     [SerializeField] float maxWaitTime = 2f;
     [Range(0f, 1f)][SerializeField] float wonderChance = 0.5f;
 
@@ -33,10 +32,16 @@ public class RabbitStateIdle : MonoBehaviour, IRabbitState
 
     public void OnStateUpdate(AIRabbit rabbit)
     {
+        RunTransitionTimer(rabbit);
+        AvoidPlayer(rabbit);
+    }
+
+    private void RunTransitionTimer(AIRabbit rabbit)
+    {
         waitTime -= Time.deltaTime;
-        if(waitTime <= 0f)
+        if (waitTime <= 0f)
         {
-            if(Random.value <= wonderChance)
+            if (Random.value <= wonderChance)
             {
                 rabbit.TransitionState(wonderState);
             }
@@ -45,8 +50,11 @@ public class RabbitStateIdle : MonoBehaviour, IRabbitState
                 waitTime = Random.Range(1f, maxWaitTime);
             }
         }
+    }
 
-        if (Vector2.Distance(transform.position, player.transform.position) <= fleeRange)
+    private void AvoidPlayer(AIRabbit rabbit)
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) <= rabbit.FleeRange)
         {
             rabbit.TransitionState(fleeState);
         }

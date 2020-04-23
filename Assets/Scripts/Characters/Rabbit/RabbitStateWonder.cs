@@ -5,7 +5,6 @@ using UnityEngine;
 public class RabbitStateWonder : MonoBehaviour, IRabbitState
 {
     [SerializeField] float moveSpeed = 2f;
-    [SerializeField] float fleeRange = 4f;
     [SerializeField] float maxWaitTime = 2f;
     [SerializeField] float wonderDistance = 5f;
     [Range(0f, 1f)][SerializeField] float idleChance = 0.5f;
@@ -37,8 +36,15 @@ public class RabbitStateWonder : MonoBehaviour, IRabbitState
 
     public void OnStateUpdate(AIRabbit rabbit)
     {
+        RunTransitionTimer(rabbit);
+        AvoidPlayer(rabbit);
+        MoveToGoal(rabbit);
+    }
+
+    private void RunTransitionTimer(AIRabbit rabbit)
+    {
         waitTime -= Time.deltaTime;
-        if(waitTime <= 0f)
+        if (waitTime <= 0f)
         {
             waitTime = Random.Range(1f, maxWaitTime);
             if (Random.value <= idleChance)
@@ -46,13 +52,19 @@ public class RabbitStateWonder : MonoBehaviour, IRabbitState
                 rabbit.TransitionState(idleState);
             }
         }
+    }
 
-        if(Vector2.Distance(transform.position, player.transform.position) <= fleeRange)
+    private void AvoidPlayer(AIRabbit rabbit)
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) <= rabbit.FleeRange)
         {
             rabbit.TransitionState(fleeState);
         }
+    }
 
-        if(Vector2.Distance(transform.position, goal) > 0.1f)
+    private void MoveToGoal(AIRabbit rabbit)
+    {
+        if (Vector2.Distance(transform.position, goal) > 0.1f)
         {
             Vector3 moveTo = goal - transform.position;
             rabbit.RigidBody.velocity = moveTo.normalized * moveSpeed;

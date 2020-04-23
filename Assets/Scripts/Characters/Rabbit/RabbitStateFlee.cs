@@ -5,7 +5,6 @@ using UnityEngine;
 public class RabbitStateFlee : MonoBehaviour, IRabbitState
 {
     [SerializeField] float moveSpeed = 4f;
-    [SerializeField] float fleeRange = 5f;
     [SerializeField] float fleeTime = 4f;
 
     PlayerController player;
@@ -31,7 +30,13 @@ public class RabbitStateFlee : MonoBehaviour, IRabbitState
 
     public void OnStateUpdate(AIRabbit rabbit)
     {
-        if(Vector2.Distance(transform.position, player.transform.position) > fleeRange)
+        RunTransitionTimer(rabbit);
+        MoveAwayFromPlayer(rabbit);
+    }
+
+    private void RunTransitionTimer(AIRabbit rabbit)
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > rabbit.FleeRange)
         {
             fleeTimer += Time.deltaTime;
             if (fleeTimer >= fleeTime)
@@ -43,7 +48,10 @@ public class RabbitStateFlee : MonoBehaviour, IRabbitState
         {
             fleeTimer = 0f;
         }
+    }
 
+    private void MoveAwayFromPlayer(AIRabbit rabbit)
+    {
         Vector3 moveTo = (transform.position - player.transform.position);
         rabbit.RigidBody.velocity = moveTo.normalized * moveSpeed;
     }

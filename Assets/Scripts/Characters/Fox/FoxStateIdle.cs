@@ -9,12 +9,14 @@ namespace ArcticPass.AI
         [SerializeField] float wonderChance = 0.5f;
 
         IFoxState wonderState;
+        IFoxState fleeState;
 
         float waitTimer;
 
         private void Start()
         {
             wonderState = GetComponent<FoxStateWonder>();
+            fleeState = GetComponent<FoxStateFlee>();
         }
 
         public void OnStateEnter(AIFox fox)
@@ -49,11 +51,11 @@ namespace ArcticPass.AI
             }
         }
 
-        private static void AvoidPlayer(AIFox fox)
+        private void AvoidPlayer(AIFox fox)
         {
             if (fox.InRangeOfTarget())
             {
-                //fox.TransitionState();
+                fox.TransitionState(fleeState);
             }
         }
     }

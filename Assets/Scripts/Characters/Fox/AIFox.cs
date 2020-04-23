@@ -10,6 +10,7 @@ namespace ArcticPass.AI
         [SerializeField] float attackRange = 5f;
 
         Health health;
+        Animator animator;
         Transform target;
 
         IFoxState currentState;
@@ -22,6 +23,7 @@ namespace ArcticPass.AI
         private void Start()
         {
             health = GetComponent<Health>();
+            animator = GetComponentInChildren<Animator>();
             Rigidbody = GetComponent<Rigidbody2D>();
             target = PlayerController.GetPlayer().transform;
             InitialState(GetComponent<FoxStateIdle>());
@@ -30,6 +32,7 @@ namespace ArcticPass.AI
         private void Update()
         {
             HandleStateEvents();
+            Animate();
         }
 
         private void HandleStateEvents()
@@ -42,6 +45,12 @@ namespace ArcticPass.AI
                 currentState = nextState;
                 currentState.OnStateEnter(this);
             }
+        }
+
+        private void Animate()
+        {
+            animator.SetFloat("Horizontal", Rigidbody.velocity.normalized.x);
+            animator.SetFloat("Vertical", Rigidbody.velocity.normalized.y);
         }
 
         private void InitialState(IFoxState state)

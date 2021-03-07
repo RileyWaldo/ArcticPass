@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d68d23ee354fdc548a0cfcee6d9c5f81,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -197,6 +200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8716035482530554721, guid: 04fb7296d3dd46048ba3f719352559c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,7 +334,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 854335676576945256, guid: becd7687d73700d4cbcc740f6eb88bc9, type: 3}
+    - {fileID: 1874428044397586937, guid: becd7687d73700d4cbcc740f6eb88bc9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: becd7687d73700d4cbcc740f6eb88bc9, type: 3}
 --- !u!1001 &1923728841
 PrefabInstance:

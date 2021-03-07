@@ -1,108 +1,37 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
+using CodeCabana.StateMachine;
+using CodeCabana.Core;
 
-namespace ArcticPass.Control
+namespace ArcticPass.Character
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : StateMachine
     {
-        //tunables
-        [SerializeField] float moveSpeed = 4f;
-        [SerializeField] float sprintFactor = 2f;
-        [SerializeField] float friction = 1f;
-
-        //cached referances
-        Animator animator;
+        Health health;
         Rigidbody2D rigidBody;
-
-        const string horizontal = "Horizontal";
-        const string verticle = "Vertical";
-
-        Vector2 inputAxis = Vector2.zero;
-        Vector2 inputLast = Vector2.zero;
-        float inputSprint = 0;
-
-        //static vars
-
-        static PlayerController player;
+        Animator animator;
 
         private void Awake()
         {
-            player = this;
-        }
+            health = GetComponent<Health>();
+            rigidBody = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
 
-        public static PlayerController GetPlayer()
-        {
-            return player;
+            Assert.IsNotNull(health, name + " is missing health component.");
+            Assert.IsNotNull(rigidBody, name + " is missing rigidbody2D component.");
+            Assert.IsNotNull(animator, name + " is missing animator component.");
+
+            AwakeState();
         }
 
         private void Start()
         {
-            animator = GetComponentInChildren<Animator>();
-            rigidBody = GetComponent<Rigidbody2D>();
+            StartState();
         }
 
-        void Update()
+        private void Update()
         {
-            GetInput();
-            UpdatePosition();
-            Attack();
-            Animate();
+            UpdateState();
         }
-
-        private void GetInput()
-        {
-            inputAxis.x = Input.GetAxisRaw(horizontal);
-            inputAxis.y = Input.GetAxisRaw(verticle);
-            if (inputAxis != Vector2.zero)
-            {
-                inputLast = inputAxis;
-            }
-            inputSprint = Input.GetAxis("Sprint");
-        }
-
-
-        private void Animate()
-        {
-            animator.speed = 1f;
-            animator.SetFloat(horizontal, inputLast.x);
-            animator.SetFloat(verticle, inputLast.y);
-            if (!animator.GetBool("attack") && rigidBody.velocity.magnitude <= 1f)
-            {    
-                animator.speed = 0f;
-            }
-        }
-
-        private void UpdatePosition()
-        {
-            //get input direction
-            Vector2 addVelocity = new Vector2(inputAxis.x, inputAxis.y);
-            addVelocity.Normalize();
-            //check if sprinting
-            float addSprint = 1f;
-            if (inputSprint >= Mathf.Epsilon)
-            {
-                addSprint = sprintFactor;
-                addVelocity *= sprintFactor;
-            }
-            //friction
-            if (addVelocity.magnitude <= Mathf.Epsilon)
-            {
-                addVelocity = -rigidBody.velocity.normalized * friction;
-            }
-            //move rigidbody
-            rigidBody.velocity += addVelocity;
-            if (rigidBody.velocity.magnitude > moveSpeed * addSprint)
-            {
-                rigidBody.velocity = rigidBody.velocity.normalized * moveSpeed * addSprint;
-            }
-        }
-
-        private void Attack()
-        {
-            if (Input.GetAxis("Fire2") > 0.5f)
-            {
-                animator.SetBool("attack", true);
-            }
-        }
-
     }
 }

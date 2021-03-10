@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ArcticPass.Generator
+namespace ArcticPass.Generators
 {
     public class SnowMaker : MonoBehaviour
     {

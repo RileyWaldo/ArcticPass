@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ArcticPass.Generator
+namespace ArcticPass.Generators
 {
     [CreateAssetMenu(fileName = "NameList", menuName = "ArcticPass/Create New Name List", order = 2)]
     public class NameList : ScriptableObject

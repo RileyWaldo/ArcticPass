@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using ArcticPass.Control;
 
-namespace ArcticPass.Generator
+namespace ArcticPass.Generators
 {
     public class PassGenerator : MonoBehaviour
     {

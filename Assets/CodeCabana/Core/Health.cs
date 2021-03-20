@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CodeCabana.Core
 {
@@ -8,6 +9,9 @@ namespace CodeCabana.Core
 
         float maxHealth;
         bool isDead = false;
+        bool invulnerable = false;
+
+        public event Action OnDeath;
 
         private void Awake()
         {
@@ -18,11 +22,12 @@ namespace CodeCabana.Core
         {
             health = 0;
             isDead = true;
+            OnDeath?.Invoke();
         }
 
         public void DealDamage(float damage)
         {
-            if (isDead)
+            if (isDead || invulnerable)
                 return;
 
             health -= damage;
@@ -69,6 +74,11 @@ namespace CodeCabana.Core
         public bool IsDead()
         {
             return isDead;
+        }
+
+        public void Invincible(bool value)
+        {
+            invulnerable = value;
         }
     }
 }

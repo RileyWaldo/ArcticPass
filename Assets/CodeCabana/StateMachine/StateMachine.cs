@@ -3,12 +3,14 @@ using UnityEngine.Assertions;
 
 namespace CodeCabana.StateMachine
 {
-    public abstract class StateMachine : MonoBehaviour
+    public abstract class StateMachine<T> : MonoBehaviour
+        where T : class
     {
-        [SerializeField] State startingState = null;
+        [SerializeField] State<T> startingState = null;
 
-        State currentState;
-        State nextState;
+        State<T> previousState;
+        State<T> currentState;
+        State<T> nextState;
 
         bool isStateChanging = false;
 
@@ -17,33 +19,39 @@ namespace CodeCabana.StateMachine
             Assert.IsNotNull(startingState, "Please set initial state for " + name);
         }
 
-        protected void StartState()
+        protected void StartState(T state)
         {
-            InitStartState();
+            InitStartState(state);
         }
 
-        protected void UpdateState()
+        protected void UpdateState(T state)
         {
-            currentState.OnUpdate(this);
+            currentState.OnUpdate(state);
             if(isStateChanging)
             {
                 isStateChanging = false;
-                currentState.OnExit(this);
+                currentState.OnExit(state);
                 currentState = nextState;
-                nextState.OnEnter(this);
+                nextState.OnEnter(state);
             }
         }
 
-        protected void InitStartState()
+        protected void InitStartState(T state)
         {
             currentState = startingState;
-            currentState.OnEnter(this);
+            currentState.OnEnter(state);
         }
 
-        public void ChangeState(State newState)
+        public void ChangeState(State<T> newState)
         {
             isStateChanging = true;
+            previousState = currentState;
             nextState = newState;
+        }
+
+        public void RestorePreviousState()
+        {
+            ChangeState(previousState);
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ArcticPass.Character.Player
+namespace ArcticPass.CharacterControllers.Player
 {
     public class PlayerController : MonoBehaviour
     {

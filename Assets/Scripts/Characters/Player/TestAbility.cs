@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using CodeCabana.CharacterControllers;
 
-namespace ArcticPass.Character.Player
+namespace ArcticPass.CharacterControllers.Player
 {
     public class TestAbility : CharacterAbility
     {

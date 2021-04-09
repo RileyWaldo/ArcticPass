@@ -1,4 +1,4 @@
-﻿namespace ArcticPass.Character
+﻿namespace ArcticPass.CharacterControllers
 {
     public enum CharacterState
     {

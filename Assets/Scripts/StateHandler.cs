@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ArcticPass.Character
+namespace ArcticPass.CharacterControllers
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class StateHandler : MonoBehaviour

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using CodeCabana.StateMachine;
+﻿using CodeCabana.StateMachine;
+using CodeCabana.CharacterControllers;
 
-namespace ArcticPass.Character.States
+namespace ArcticPass.CharacterControllers.States
 {
     public class AttackState : State<Character>
     {

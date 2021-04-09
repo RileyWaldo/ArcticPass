@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using CodeCabana.StateMachine;
+using CodeCabana.CharacterControllers;
 
-namespace ArcticPass.Character.Player
+namespace ArcticPass.CharacterControllers.Player
 {
     [RequireComponent(typeof(Character))]
     public class MoveStatePlayer : State<Character>

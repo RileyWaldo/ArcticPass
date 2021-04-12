@@ -26,10 +26,7 @@ namespace ArcticPass.UI
 
         private void UpdateStatusBars()
         {
-            float health = player.GetComponent<Health>().GetHealth();
-            int spriteIndex = Mathf.CeilToInt(health * healthSprite.Length - 1f);
-            spriteIndex = Mathf.Clamp(spriteIndex, 0, healthSprite.Length);
-            healthGUI.sprite = healthSprite[spriteIndex];
+            
         }
     }
 }

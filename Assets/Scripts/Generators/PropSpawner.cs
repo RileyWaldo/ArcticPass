@@ -2,7 +2,7 @@
 using UnityEngine;
 using ArcticPass.Core;
 
-namespace ArcticPass.Generator
+namespace ArcticPass.Generators
 {
     public class PropSpawner : MonoBehaviour
     {

@@ -98,8 +98,8 @@ namespace ArcticPass.Audio
         public void PlaySoundPos(AudioClip clip, Vector3 pos)
         {
             if (clip == null) { return; }
-            Vector3 playFrom = pos - PlayerController.GetPlayer().transform.position;
-            AudioSource.PlayClipAtPoint(clip, playFrom);
+            //Vector3 playFrom = pos - PlayerController.GetPlayer().transform.position;
+            //AudioSource.PlayClipAtPoint(clip, playFrom);
         }
 
         public void SetVolumeAll(float master, float music, float sfx)

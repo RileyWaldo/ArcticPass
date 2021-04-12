@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using ArcticPass.AI;
 
 namespace ArcticPass.Core
 {
@@ -9,8 +8,6 @@ namespace ArcticPass.Core
         [SerializeField] int level = 1;
         [SerializeField] float speed = 4;
         [SerializeField] int maxDogs = 4;
-
-        List<AIDog> dogsWorkingSled = new List<AIDog>();
 
         public int GetLevel()
         {

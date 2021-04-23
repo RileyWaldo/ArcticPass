@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using ArcticPass.Inventories;
+using CodeCabana.Inventories;
 
 namespace ArcticPass.Crafting
 {
@@ -7,6 +7,6 @@ namespace ArcticPass.Crafting
     public class CraftRecipe : ScriptableObject
     {
         [SerializeField] CraftIngredient[] ingredients = null;
-        [SerializeField] Item product = null;
+        [SerializeField] InventoryItem product = null;
     }
 }

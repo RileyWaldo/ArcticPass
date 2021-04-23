@@ -14,10 +14,12 @@ namespace CodeCabana.Inventories
         [TextArea(4, 5)][Tooltip("Item's description.")]
         [SerializeField] string itemDescription = "";
         [Tooltip("Item's value.")]
-        [SerializeField] int value = 0;
+        [SerializeField] float value = 0;
+        [Tooltip("Item's weight.")]
+        [SerializeField] float weight = 0;
         [Tooltip("Can this item stack?")]
         [SerializeField] bool isStackable = false;
-        [Tooltip("Set this less than 0 if there is no limit")]
+        [Tooltip("Set this less than 0 if there is no limit.")]
         [SerializeField] int maxStack = 1;
 
         static Dictionary<string, InventoryItem> itemLookUpCache;
@@ -67,9 +69,14 @@ namespace CodeCabana.Inventories
             get { return itemDescription; }
         }
 
-        public int Value
+        public float Value
         {
             get { return value; }
+        }
+
+        public float Weight
+        {
+            get { return weight; }
         }
 
         public bool IsStackable

@@ -10,7 +10,19 @@ namespace CodeCabana.Inventories
     {
         [SerializeField] List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
+        private float totalWeight = 0;
+
         public event Action onUpdateInventory;
+
+        private void OnEnable()
+        {
+            onUpdateInventory += CalculateWeight;
+        }
+
+        private void OnDisable()
+        {
+            onUpdateInventory -= CalculateWeight;
+        }
 
         public static Inventory GetPlayerInventory()
         {
@@ -18,10 +30,13 @@ namespace CodeCabana.Inventories
             return player.GetComponent<Inventory>();
         }
 
-        private void Awake()
+        private void CalculateWeight()
         {
-            var item = InventoryItem.GetFromID("Lux");
-            AddItem(item, 1560500);
+            totalWeight = 0;
+            foreach (InventorySlot slot in inventorySlots)
+            {
+                totalWeight += slot.Item.Weight * slot.Amount;
+            }
         }
 
         public int GetSize()
@@ -44,6 +59,11 @@ namespace CodeCabana.Inventories
         public int GetItemAmountInSlot(int slot)
         {
             return inventorySlots[slot].Amount;
+        }
+
+        public float GetTotalWeight()
+        {
+            return totalWeight;
         }
 
         public bool AddItem(InventoryItem itemToAdd, int amount)

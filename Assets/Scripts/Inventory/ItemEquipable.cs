@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+using CodeCabana.Inventories;
 
 namespace ArcticPass.Inventories
 {
     [CreateAssetMenu(fileName = "Equipment", menuName = "ArcticPass/Create item/Equipable", order = 0)]
-    public class ItemEquipable : Item
+    public class ItemEquipable : InventoryItem
     {
         [Header("Equipment")]
-        [SerializeField] int slot = 0;
+        [SerializeField] EquipmentSlot slot = EquipmentSlot.Weapon;
         [SerializeField] float attackBonus = 0;
         [SerializeField] float defenceBonus = 0;
         [SerializeField] float speedBonus = 0;

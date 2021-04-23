@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using CodeCabana.Inventories;
 
 namespace ArcticPass.Inventories
 {
-    [CreateAssetMenu(fileName = "Equipment", menuName = "ArcticPass/Create item/Consumable", order = 0)]
-    public class ItemConsumable : Item
+    [CreateAssetMenu(fileName = "Consumable", menuName = "ArcticPass/Create item/Consumable", order = 0)]
+    public class ItemConsumable : InventoryItem
     {
 
     }

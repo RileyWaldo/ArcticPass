@@ -1,6 +1,6 @@
 ﻿namespace ArcticPass.Core
 {
-    public interface StatModifier
+    public interface IStatModifier
     {
         float GetAttack();
         float GetDefence();

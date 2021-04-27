@@ -3,7 +3,7 @@ using CodeCabana.Core;
 
 namespace ArcticPass.Core
 {
-    public class Hunger : MonoBehaviour, StatModifier
+    public class Hunger : MonoBehaviour, IStatModifier
     {
         [SerializeField] float maxHunger = 100;
         [SerializeField] float speedPenalty = -1.5f;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace ArcticPass.Core
 {
@@ -9,9 +10,30 @@ namespace ArcticPass.Core
         [SerializeField] float defence = 1;
         [SerializeField] float speed = 4;
 
-        private StatModifier[] GetModifiers()
+        private List<Modifier> modifiers = new List<Modifier>();
+
+        private void Update()
         {
-            return GetComponents<StatModifier>();
+            List<Modifier> tempList = new List<Modifier>();
+
+            foreach(Modifier modifier in modifiers)
+            {
+                modifier.timeLimit -= Time.deltaTime;
+                if(modifier.timeLimit <= 0)
+                {
+                    tempList.Add(modifier);
+                }
+            }
+
+            foreach(Modifier modifier in tempList)
+            {
+                modifiers.Remove(modifier);
+            }
+        }
+
+        private IStatModifier[] GetModifiers()
+        {
+            return GetComponents<IStatModifier>();
         }
 
         public float GetAttack()
@@ -19,7 +41,7 @@ namespace ArcticPass.Core
             var modifiers = GetModifiers();
             float value = attack;
 
-            foreach(StatModifier modifier in modifiers)
+            foreach(IStatModifier modifier in modifiers)
             {
                 value += modifier.GetAttack();
             }
@@ -32,7 +54,7 @@ namespace ArcticPass.Core
             var modifiers = GetModifiers();
             float value = attack;
 
-            foreach (StatModifier modifier in modifiers)
+            foreach (IStatModifier modifier in modifiers)
             {
                 value += modifier.GetDefence();
             }
@@ -45,12 +67,17 @@ namespace ArcticPass.Core
             var modifiers = GetModifiers();
             float value = attack;
 
-            foreach (StatModifier modifier in modifiers)
+            foreach (IStatModifier modifier in modifiers)
             {
                 value += modifier.GetSpeed();
             }
 
             return value;
+        }
+
+        public void AddModifier(Modifier modifier)
+        {
+            modifiers.Add(modifier);
         }
     }
 }

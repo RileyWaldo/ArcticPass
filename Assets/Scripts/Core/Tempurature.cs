@@ -3,7 +3,7 @@ using CodeCabana.Core;
 
 namespace ArcticPass.Core
 {
-    public class Tempurature : MonoBehaviour, StatModifier
+    public class Tempurature : MonoBehaviour, IStatModifier
     {
         [SerializeField] float maxTemp = 100f;
         [SerializeField] float speedPenalty = -1.5f;

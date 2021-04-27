@@ -136,6 +136,36 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_LightType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716035482530554720, guid: 04fb7296d3dd46048ba3f719352559c9,
+        type: 3}
+      propertyPath: m_BlendStyleIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8716035482530554721, guid: 04fb7296d3dd46048ba3f719352559c9,
         type: 3}
       propertyPath: m_LocalPosition.x

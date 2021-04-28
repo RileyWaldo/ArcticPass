@@ -25,21 +25,14 @@ namespace ArcticPass.Core
                 hunger = maxHunger;
         }
 
-        public float GetAttack()
+        public Modifier GetModifier()
         {
-            return 0;
-        }
+            Modifier modifier = new Modifier(0);
 
-        public float GetDefence()
-        {
-            return 0;
-        }
-
-        public float GetSpeed()
-        {
             if (hunger <= 0)
-                return speedPenalty;
-            return 0;
+                modifier.speed = speedPenalty;
+
+            return modifier;
         }
     }
 }

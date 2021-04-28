@@ -1,22 +1,33 @@
 ﻿using UnityEngine;
-using CodeCabana.Inventories;
+using CodeCabana.Saving;
 
 namespace ArcticPass.Inventories
 {
-    public class ToolBelt : MonoBehaviour
+    public class ToolBelt : MonoBehaviour, ISaveable
     {
         [SerializeField] int slotAmount = 5;
 
-        InventoryItem[] toolSlots;
+        ItemConsumable[] toolSlots;
 
         private void Awake()
         {
-            for(int i=0; i<slotAmount; i++)
-            {
-                toolSlots[i] = null;
-            }
+            toolSlots = new ItemConsumable[slotAmount];
         }
 
+        public void Use(int index)
+        {
+            if(toolSlots[index] != null)
+                toolSlots[index].Use(gameObject);
+        }
 
+        public object CaptureState()
+        {
+            return toolSlots;
+        }
+
+        public void RestoreState(object state)
+        {
+            toolSlots = state as ItemConsumable[];
+        }
     }
 }

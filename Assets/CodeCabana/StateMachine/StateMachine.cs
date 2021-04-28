@@ -7,11 +7,11 @@
         State<T> currentState;
         State<T> nextState;
 
-        bool isStateChanging = true;
+        bool isStateChanging = false;
 
         public StateMachine(State<T> initState)
         {
-            currentState = initState;
+            ChangeState(initState);
         }
 
         public void UpdateState(T state)
@@ -19,9 +19,12 @@
             if(isStateChanging)
             {
                 isStateChanging = false;
-                currentState.OnExit(state);
+
+                if(currentState != null)
+                    currentState.OnExit(state);
+
                 currentState = nextState;
-                nextState.OnEnter(state);
+                currentState.OnEnter(state);
             }
             currentState.OnUpdate(state);
         }
@@ -35,6 +38,9 @@
 
         public void RestorePreviousState()
         {
+            if (previousState == null)
+                return;
+
             ChangeState(previousState);
         }
     }

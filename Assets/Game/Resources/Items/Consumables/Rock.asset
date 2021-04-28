@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f49efa03d19f740b84532d06f0f43d, type: 3}
+  m_Script: {fileID: 11500000, guid: b573db6a4f3d0524a917eeafc67a4292, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  itemID: 2
-  sprite: {fileID: -7989365964255400323, guid: fbd3babaf277220418fffb3a1582b1cc, type: 3}
-  itemType: 0
+  itemID: 4a9ec348-6177-42f2-927e-ed8e372decd3
+  icon: {fileID: 0}
   itemName: Rock
-  itemDescription: Primitive technology! elelel
-  isStackable: 1
+  itemDescription: 
   value: 0
-  weight: 1
-  damage: 0
+  weight: 0
+  isStackable: 0
+  maxStack: 1
+  consumable: 1
+  projectilePrefab: {fileID: 0}

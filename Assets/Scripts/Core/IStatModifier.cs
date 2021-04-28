@@ -2,8 +2,6 @@
 {
     public interface IStatModifier
     {
-        float GetAttack();
-        float GetDefence();
-        float GetSpeed();
+        Modifier GetModifier();
     }
 }

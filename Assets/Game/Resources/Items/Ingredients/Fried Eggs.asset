@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81e323e37d29ffd4c9fc121e3351afff, type: 3}
-  m_Name: Log
+  m_Name: Fried Eggs
   m_EditorClassIdentifier: 
   itemID: ae201b7f-947f-4caf-b910-0dba89ea3b95
   icon: {fileID: -5743705592445351816, guid: fbd3babaf277220418fffb3a1582b1cc, type: 3}

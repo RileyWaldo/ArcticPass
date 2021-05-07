@@ -17,16 +17,19 @@ namespace ArcticPass.CharacterControllers.Actions
             {
                 currentAction.Cancel();
             }
+
+            this.canOverride = canOverride;
             currentAction = action;
         }
 
         public bool IsCurrentActionFinished()
         {
-            return true;
+            return !canOverride;
         }
 
         public void CancelCurrentAction()
         {
+            canOverride = true;
             StartAction(null, true);
         }
     }

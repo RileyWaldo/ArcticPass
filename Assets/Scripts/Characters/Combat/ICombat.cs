@@ -1,6 +1,8 @@
-﻿namespace ArcticPass.CharacterControllers.Combat
+﻿using ArcticPass.CharacterControllers.Actions;
+
+namespace ArcticPass.CharacterControllers.Combat
 {
-    public interface ICombat
+    public interface ICombat : IAction
     {
         void Attack();
     }

@@ -2,6 +2,7 @@
 {
     public interface IAction
     {
+        bool CanOverride();
         void Cancel();
     }
 }

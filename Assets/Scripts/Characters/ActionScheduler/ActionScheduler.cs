@@ -5,32 +5,26 @@ namespace ArcticPass.CharacterControllers.Actions
     public class ActionScheduler : MonoBehaviour
     {
         IAction currentAction;
-        bool canOverride = true;
 
-        public void StartAction(IAction action, bool canOverride)
+        public bool StartAction(IAction action)
         {
-            if (!this.canOverride)
-                return;
             if (currentAction == action)
-                return;
+                return false;
+
             if (currentAction != null)
             {
+                if (!currentAction.CanOverride())
+                    return false;
                 currentAction.Cancel();
             }
 
-            this.canOverride = canOverride;
             currentAction = action;
-        }
-
-        public bool IsCurrentActionFinished()
-        {
-            return !canOverride;
+            return true;
         }
 
         public void CancelCurrentAction()
         {
-            canOverride = true;
-            StartAction(null, true);
+            StartAction(null);
         }
     }
 }

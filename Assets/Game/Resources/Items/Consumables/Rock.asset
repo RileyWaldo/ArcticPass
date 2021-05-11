@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 4a9ec348-6177-42f2-927e-ed8e372decd3
   icon: {fileID: 0}
   itemName: Rock
-  itemDescription: 
+  itemDescription: Hard
   value: 0
   weight: 0
   isStackable: 0
